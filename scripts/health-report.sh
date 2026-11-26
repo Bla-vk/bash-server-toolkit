@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+# Prints a quich health report for this machine
+# Usage: ./health-report.sh [disk_warn_percent]
 set -euo pipefail
 
 DISK_THRESHOLD="${1:-80}"
