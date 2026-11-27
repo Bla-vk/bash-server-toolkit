@@ -70,7 +70,9 @@ file_checks() {
     pass "No world-writable files in /etc"
   else
     fail "World-writable files in /etc:"
-    echo "$writable" | sed 's/^/        /'
+    while IFS= read -r line; do
+      echo "        $line"
+    done <<< "$writable"
   fi
 }
 
